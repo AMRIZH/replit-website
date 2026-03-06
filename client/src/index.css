@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 99%;
+    --foreground: 220 10% 12%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 12%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 12%;
+    
+    --primary: 150 15% 35%; /* Minimalist muted olive/green */
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 220 10% 96%;
+    --secondary-foreground: 220 10% 15%;
+    
+    --muted: 220 10% 94%;
+    --muted-foreground: 220 10% 45%;
+    
+    --accent: 220 10% 94%;
+    --accent-foreground: 220 10% 15%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 220 10% 90%;
+    --input: 220 10% 90%;
+    --ring: 150 15% 35%;
+    
+    --radius: 0.75rem;
+
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6, .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* React Quill Customizations for Clean Minimal Look */
+.ql-editor {
+  min-height: 250px;
+  font-family: var(--font-sans) !important;
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  color: hsl(var(--foreground));
+}
+
+.ql-container.ql-snow {
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  border-color: hsl(var(--input)) !important;
+}
+
+.ql-toolbar.ql-snow {
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  border-color: hsl(var(--input)) !important;
+  background-color: hsl(var(--muted));
+  font-family: var(--font-sans);
+}
+
+/* Prose/HTML content rendering styling */
+.prose-recipe h1, .prose-recipe h2, .prose-recipe h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: hsl(var(--foreground));
+}
+.prose-recipe p {
+  margin-bottom: 1.25em;
+  line-height: 1.7;
+}
+.prose-recipe ul {
+  list-style-type: disc;
+  padding-left: 1.5em;
+  margin-bottom: 1.25em;
+}
+.prose-recipe ol {
+  list-style-type: decimal;
+  padding-left: 1.5em;
+  margin-bottom: 1.25em;
+}
+.prose-recipe a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.prose-recipe blockquote {
+  border-left: 4px solid hsl(var(--primary));
+  padding-left: 1em;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1.25em;
+}
