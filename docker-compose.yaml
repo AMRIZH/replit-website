@@ -5,7 +5,7 @@ services:
     build: .
     container_name: replit_recipe_share_hub_app
     ports:
-      - "5000:5000"
+      - "5006:5000"
     environment:
       - DATABASE_URL=postgres://user:password@db:5432/reciterecipe
       - SESSION_SECRET=super_secret_session_key
